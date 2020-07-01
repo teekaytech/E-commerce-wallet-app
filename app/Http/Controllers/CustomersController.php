@@ -8,7 +8,11 @@ class CustomersController extends Controller
 {
 
     public function dashboard(Request $request) {
-//        dd($request->all());
+        $this->validate($request, [
+            'email' => ['required', 'email', 'unique:customers'],
+            'password'  => ['required']
+        ]);
+
         return view ('pages.dashboard');
     }
 

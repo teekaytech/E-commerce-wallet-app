@@ -6,4 +6,3 @@
         <p>Welcome to your dashboard</p>
     </section>
 @endsection
-php artisan make:controller PhotoController --resource

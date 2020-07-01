@@ -7,11 +7,14 @@
     <main class="login-form bg-primary">
         <section class="form-box px-5 pt-5 pb-0">
             <p class="text-center login-head h5 mb-4">Customer Login</p>
+
+            @include('includes._flash_messages')
+
             <form method="POST" action="{{ route('customer.dashboard') }}">
                 @csrf
                 <div class="form-group">
-                    <label for="username">Email</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
                 </div>
 
                 <div class="form-group">

@@ -12,6 +12,7 @@
         <header class="content-header p-2 d-flex flex-row justify-content-between text-white">
             @include('includes.header')
         </header>
+        @include('includes._flash_messages')
 
         @yield('content')
 
