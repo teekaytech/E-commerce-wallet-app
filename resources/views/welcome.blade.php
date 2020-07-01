@@ -1,22 +1,3 @@
-<?php
-//require_once('controllers/UserLogin.php');
-//
-//$status = false;
-//$message = '';
-//if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//    if ((!empty($_POST['username'])) && (!empty($_POST['password']))) {
-//        $data['username'] = $_POST['username'];
-//        $data['password'] = $_POST['password'];
-//        $user = new UserLogin();
-//        if ($user->process_login()) {
-//            $message = "You have been successfully logged in to your dashboard";
-//            $status = true;
-//            $url = "views/dashboard.php";
-//            header("Refresh:2; URL='$url'");
-//        }
-//    } else { $message = 'Username or password cannot be empty!'; }
-//}
-//?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
