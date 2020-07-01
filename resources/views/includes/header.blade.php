@@ -1,0 +1,17 @@
+
+<div class="w-75">
+    <a type="button" id="sidebarCollapse" class="btn p-0">
+        <span class="h1">E-Commerce Platform</span>
+    </a>
+</div>
+<div class="w-25 ">
+    <div class="d-flex justify-content-end">
+        <div class="text-right px-2 pt-2">
+            <span class="d-block"> username</span>
+            <a href="#" class="text-white">Logout</a>
+        </div>
+        <div class="">
+            <img src="../assets/img/avatar.png" alt="user-image" class="img-fluid img-thumbnail user-img">
+        </div>
+    </div>
+</div>

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () { return view('welcome');});
+Route::prefix('/customer')->name('customer.')->group(function () {
+    Route::post('/dashboard',  'CustomerController@dashboard')->name('dashboard');
 });

@@ -1,0 +1,147 @@
+:root {
+    --first: #1d1e4f;
+    --second: #2e2f8f;
+    --third: #3a3cd4;
+    --forth: #d6d6f6;
+    --textColor: #ffffff;
+}
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 18%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 2;
+    background: var(--third);
+    color: var(--textColor);
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -18%;
+}
+
+#sidebar .sidebar-header {
+    padding: 1rem;
+    background: var(--first);
+}
+
+#sidebar ul li a {
+    padding: 1.5rem;
+    font-size: 1rem;
+    display: block;
+    color: var(--textColor);
+    text-decoration: none;
+}
+
+#sidebar ul li a:hover, .sub-list:hover {
+    color: var(--textColor);
+    background: var(--first);
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.sub-list {
+    font-size: 0.9em;
+    padding-left: 30px;
+    background: var(--second);
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+.content {
+    width: calc(100% - 18%);
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--first);
+}
+
+.content.active {
+    width: 100%;
+}
+
+.content-header {
+    background-color: var(--third);
+}
+
+.user-img {
+    width: 4rem;
+}
+
+.login-form {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 40%;
+    background-color: var(--textColor);
+    border-radius: 0.5rem;
+}
+
+.login-head {
+    color: var(--second);
+    font-weight: bolder;
+}
+
+/* ---------------------------------------------------
+    FOOTER STYLE
+----------------------------------------------------- */
+.footer {
+    width: 100%;
+    transition: all 0.3s;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: var(--first);
+    border-top: 1px solid var(--first);
+    padding: 0.5rem 0;
+}
+
+.footer-text:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
