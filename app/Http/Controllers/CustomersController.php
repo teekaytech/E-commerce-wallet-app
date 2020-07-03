@@ -2,18 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 
 class CustomersController extends Controller
 {
 
-    public function dashboard(Request $request) {
+    public function login(Request $request) {
         $this->validate($request, [
-            'email' => ['required', 'email', 'unique:customers'],
+            'email' => ['required', 'email'],
             'password'  => ['required']
         ]);
 
-        return view ('pages.dashboard');
+        $customer = Customer::where('email', $request->email)->first();
+        Session::put('customer', $customer->id);
+
+        if ($customer) {
+            Session::flash('success', 'Login successful!');
+            return redirect(route('customer.dashboard'));
+        } else {
+            Session::flash('info', 'Customer not found!');
+            return back();
+        }
+    }
+
+    public function dashboard() {
+        $id = Session::get('customer');
+        $customer = Customer::where('id', '=', $id)->with(['wallet'])->first();
+        return view('pages.dashboard', compact('customer'));
+    }
+
+    public function logout() {
+        Session::forget('customer');
+        Session::flash('success', 'logout successful!');
+        return view('welcome');
     }
 
 }

@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wallet extends Model
 {
-    //
+    public function customer() {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
 }

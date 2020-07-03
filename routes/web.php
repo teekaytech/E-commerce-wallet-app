@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function () { return view('welcome');});
 Route::prefix('/customer')->name('customer.')->group(function () {
-    Route::post('/dashboard',  'CustomersController@dashboard')->name('dashboard');
+    Route::post('/login',  'CustomersController@login')->name('login');
+    Route::get('/dashboard',  'CustomersController@dashboard')->name('dashboard');
+    Route::get('/logout',  'CustomersController@logout')->name('logout');
+
+    Route::get('/wallet_transfer/{id}',  'WalletsController@new_transfer')->name('new_transfer');
+    Route::post('/wallet_transfer',  'WalletsController@make_transfer')->name('make_transfer');
 });

@@ -10,16 +10,16 @@
 
             @include('includes._flash_messages')
 
-            <form method="POST" action="{{ route('customer.dashboard') }}">
+            <form method="POST" action="{{ route('customer.login') }}">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block mt-4" name="login">Login</button>
