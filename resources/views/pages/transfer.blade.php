@@ -4,7 +4,7 @@
     <section class="p-5">
         <h2>Send Virtual Gift (Transfer)</h2>
         <div class="row">
-            <form class="col-6 mt-3" method="post" action="{{ route('customer.make_transfer') }}">
+            <form class="col-md-6 mt-3" method="post" action="{{ route('customer.make_transfer') }}">
                 @csrf
                 <div class="form-group">
                     <label for="email">Receiver's Email</label>
@@ -17,6 +17,10 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Make Transfer</button>
             </form>
+            <section class="col-md-6 text-right">
+                <h5>Your current balance:</h5>
+                <p>{{ number_format((float)$customer->wallet->balance, 2, '.', '') }} Nigerian Naira</p>
+            </section>
         </div>
 
     </section>
