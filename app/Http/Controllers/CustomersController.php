@@ -12,8 +12,7 @@ class CustomersController extends Controller
 
     public function login(Request $request) {
         $this->validate($request, [
-            'email' => ['required', 'email'],
-            'password'  => ['required']
+            'email' => ['required', 'email']
         ]);
 
         $customer = Customer::where('email', $request->email)->first();
