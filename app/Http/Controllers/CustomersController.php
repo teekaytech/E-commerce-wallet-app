@@ -30,7 +30,10 @@ class CustomersController extends Controller
 
     public function dashboard() {
         $id = Session::get('customer');
-        $customer = Customer::where('id', '=', $id)->with(['wallet'])->first();
+        $customer = Customer::where('id', '=', $id)
+                                ->with(['wallet', 'preload_transaction' => function($q){
+                                        $q->orderBy('paystack_transactions.id', 'desc');}])
+                                ->first();
         return view('pages.dashboard', compact('customer'));
     }
 
