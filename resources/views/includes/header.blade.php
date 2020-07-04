@@ -1,7 +1,7 @@
 
 <div class="w-75">
     <a type="button" id="sidebarCollapse" class="btn p-0">
-        <span class="h1">E-Commerce Platform</span>
+        <span class="h1">Simple eWallet System</span>
     </a>
 </div>
 <div class="w-25 ">

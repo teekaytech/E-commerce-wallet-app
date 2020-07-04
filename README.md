@@ -1,4 +1,4 @@
-# Simple E-Commerce Wallet App
+# Simple eWallet System (Backend, Full Stack Developer Challenge)
 
 This is a simple app that implements wallet feature of an e-commerce application. It basically allows customers to pre-load 
 their wallets from their Debit cards. It also allows a customer to transfer virtual money as a gift to another customer within the platform.
