@@ -39,10 +39,6 @@ class WalletsController extends Controller
         return back();
     }
 
-    public function fetch_customer($id) {
-        return Customer::where('id',$id)->with(['wallet'])->first();
-    }
-
     public function update_wallet($sender_wallet_id, $receiver_wallet_id, $amount) {
         try {
             $sender_wallet = Wallet::where('id',$sender_wallet_id)->first();
@@ -72,5 +68,20 @@ class WalletsController extends Controller
             Log::info($exception->getMessage());
             return false;
         }
+    }
+
+    public function load_wallet(Request $request, $id) {
+        $customer = $this->fetch_customer($id);
+        $order_id = rand();
+        $details = [];
+        if ($request->isMethod('post')) {
+            $details['amount'] = $request->amount;
+            $details['orderID'] = $order_id;
+        }
+        return view('pages.preload_wallet', compact('customer','details'));
+    }
+
+    public function fetch_customer($id) {
+        return Customer::where('id',$id)->with(['wallet'])->first();
     }
 }

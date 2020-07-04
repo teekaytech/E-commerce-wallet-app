@@ -20,6 +20,8 @@ Route::prefix('/customer')->name('customer.')->group(function () {
 
     Route::get('/wallet_transfer/{id}',  'WalletsController@new_transfer')->name('new_transfer');
     Route::post('/wallet_transfer',  'WalletsController@make_transfer')->name('make_transfer');
+    Route::get('/preload_wallet/{id}',  'WalletsController@load_wallet')->name('preload_wallet');
+    Route::post('/preload_wallet/{id}',  'WalletsController@load_wallet')->name('preload_wallet');
 
     //preload wallet urls
     Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');

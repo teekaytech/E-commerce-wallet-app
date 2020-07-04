@@ -9,7 +9,7 @@
         <li>
             <a href="#RegSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Wallet </a>
             <ul class="collapse list-unstyled" id="RegSubmenu">
-                <li class="sub-list"><a href="#">Pre-load Wallet (Debit Card)</a></li>
+                <li class="sub-list"><a href="{{ route('customer.preload_wallet',$customer->id ) }}">Pre-load Wallet (Debit Card)</a></li>
                 <li class="sub-list"><a href="{{ route('customer.new_transfer',$customer->id) }}">Send Virtual Gift (Transfer)</a></li>
             </ul>
         </li>
