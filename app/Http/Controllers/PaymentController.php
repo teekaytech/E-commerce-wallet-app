@@ -23,7 +23,6 @@ class PaymentController extends Controller {
 
 //        dd($paymentDetails['status']);
         if ($paymentDetails) {
-            $paymentDetails['status'] == true ? Session::flash('success', 'Preload Successful!') : Session::flash('info', 'Preload failed!');;
             try {
                 $id = $paymentDetails['data']['metadata']['customer_id'];
                 $customer_wallet = Wallet::where('customer_id',$id)->first();
@@ -31,7 +30,13 @@ class PaymentController extends Controller {
 
                 DB::beginTransaction();
 
-                $customer_wallet->update(['balance' => $new_balance]);
+                if ($paymentDetails['status'] == true) {
+                    $customer_wallet->update(['balance' => $new_balance]);
+                    Session::flash('success', 'Preload Successful!');
+                } else {
+                    Session::flash('info', 'Preload failed!');
+                };
+
 
                 PaystackTransaction::create([
                     'customer_id' => $id,

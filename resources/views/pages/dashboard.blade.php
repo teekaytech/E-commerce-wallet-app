@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <section class="p-5">
+    <section class="pt-3 pl-4">
         <h2>Dear {{ ucfirst($customer->firstname).', '.strtoupper($customer->lastname) }}</h2>
         <p>Welcome to your e-Wallet App</p>
         <p class="mt-2">You Can:</p>
