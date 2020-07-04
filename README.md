@@ -1,79 +1,75 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Simple E-Commerce Wallet App
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This is a simple app that implements wallet feature of an e-commerce application. It basically allows customers to pre-load 
+their wallets from their Debit cards. It also allows a customer to transfer virtual money as a gift to another customer within the platform.
+Other core functionalities like authentication, authorization, etc. are not considered as they are not the goal of this app.  
 
-## About Laravel
+## Built with
+  * PHP/Laravel
+  * Bootstrap
+  * MySQL
+  * Paystack (Laravel Paystack package)
+  
+## Getting Started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+To get a local copy up and running follow these simple steps.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- On the project GitHub page, navigate to the main page of the repository [this page](https://github.com/teekaytech/E-commerce-wallet-app.git).
+- Under the repository name, locate and click on a green button named 'Code'. 
+- Copy the project URL as displayed.
+- If you're running Windows Operating System, open your command prompt. On Linux, Open your terminal.
+- Change the current working directory to the location where you want the cloned directory to be made. Leave as it is if the current location is where you want the project to be.
+- Type `git clone`, and then paste the URL you copied in Step 3.<br>
+`$ git clone https://github.com/teekaytech/E-commerce-wallet-app.git`
+- Press Enter. Your local copy will be created.
+ 
+Please Note that you must have github installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Since all the code is written with Laravel, `PHP Runtime >= 7.2.0` and `Laravel 6` is required to interpret the code. 
+If you don't have Laravel runtime already setup on your computer, follow the instruction for your specific operating system on the [official installation guide](https://laravel.com/docs/6.x).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Usage (Locally)
 
-## Laravel Sponsors
+After cloning on your computer, open the folder using your terminal/command prompt window and run:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Run `composer install` to install necessary packages.
+- Create a new database and run `php artisan migrate` to generate the database tables
+- Setup your .env file for necessary environmental variables like database details, etc.
+- Run `php artisan serve` to start the application.
+All done.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+## Author
 
-## Contributing
+👤 **Taofeek Olalere**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Github: [@teekaytech](https://github.com/teekaytech)
+- Twitter: [@ola_lere](https://twitter.com/ola_lere)
+- Linkedin: [linkedin](https://linkedin.com/in/olaleretaofeek)
 
-## Code of Conduct
+## 🤝 Contributing
+Contributions, issues and feature requests are welcome!
+   1. Fork the Project
+   2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+   3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+   4. Push to the Branch (git push origin feature/AmazingFeature)
+   5. Open a Pull Request.<br>
+Feel free to check the [issues page](issues/).
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Show your support
 
-## Security Vulnerabilities
+Give a ⭐️ if you like this project.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📝License
 
-## License
+This project is [MIT](lic.url) licensed.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Acknowledgements
+
+- [Laravel 6 Docs](https://laravel.com/docs/6.x)
+- [Laravel Paystack package by unicodeveloper](https://github.com/unicodeveloper/laravel-paystack)
+- [Braintemple Tutorial on Youtube](https://www.youtube.com/watch?v=V0cC3BAfTto&list=PLnBvgoOXZNCMe8goYLZmKRlathaa7nDKV)
+- [Paystack Docs](https://dashboard.paystack.com/#/get-started)
+- [Bootstrap Docs](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
