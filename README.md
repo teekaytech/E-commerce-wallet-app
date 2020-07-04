@@ -38,6 +38,7 @@ After cloning on your computer, open the folder using your terminal/command prom
 - Run `composer install` to install necessary packages.
 - Create a new database and run `php artisan migrate` to generate the database tables
 - Setup your .env file for necessary environmental variables like database details, etc.
+- Populate your `customer` and `wallet` table with some dummie data, to test the app. (Email field is important. password can be anything)
 - Run `php artisan serve` to start the application.
 All done.
 
@@ -72,4 +73,3 @@ This project is [MIT](lic.url) licensed.
 - [Laravel Paystack package by unicodeveloper](https://github.com/unicodeveloper/laravel-paystack)
 - [Braintemple Tutorial on Youtube](https://www.youtube.com/watch?v=V0cC3BAfTto&list=PLnBvgoOXZNCMe8goYLZmKRlathaa7nDKV)
 - [Paystack Docs](https://dashboard.paystack.com/#/get-started)
-- [Bootstrap Docs](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
