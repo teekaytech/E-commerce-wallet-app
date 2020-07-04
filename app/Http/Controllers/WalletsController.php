@@ -14,7 +14,15 @@ class WalletsController extends Controller
 {
     public function new_transfer($id) {
         $customer = $this->fetch_customer($id);
-        return view('pages.transfer', compact('customer'));
+        $gifts_sent = WalletTransaction::where('sender_id', $customer->id)
+                                            ->with(['receiver'])
+                                            ->orderBy('id', 'DESC')
+                                            ->get();
+        $gifts_received = WalletTransaction::where('receiver_id', $customer->id)
+                                                ->with(['initiator'])
+                                                ->orderBy('id', 'DESC')
+                                                ->get();
+        return view('pages.transfer', compact('customer', 'gifts_sent', 'gifts_received'));
     }
 
     public function make_transfer(Request $request) {
