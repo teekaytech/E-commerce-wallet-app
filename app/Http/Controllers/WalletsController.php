@@ -73,12 +73,9 @@ class WalletsController extends Controller
     public function load_wallet(Request $request, $id) {
         $customer = $this->fetch_customer($id);
         $order_id = rand();
-        $details = [];
-        if ($request->isMethod('post')) {
-            $details['amount'] = $request->amount;
-            $details['orderID'] = $order_id;
-        }
-        return view('pages.preload_wallet', compact('customer','details'));
+        $amount = 0;
+        if ($request->isMethod('post')) {  $amount = $request->amount; }
+        return view('pages.preload_wallet', compact('customer','amount'));
     }
 
     public function fetch_customer($id) {

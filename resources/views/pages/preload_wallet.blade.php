@@ -17,21 +17,20 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Preload Wallet</button>
                 </form>
-                @if(count($details) > 0)
+                @if($amount > 0)
                     <form method="POST" action="{{ route('customer.pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
                         <div class="row" style="margin-bottom:40px;">
                             <div class="col-md-8 col-md-offset-2">
                                 <div class=" bg-success p-3 text-white font-weight-bold mb-3">
                                     <p class="">
                                         You are about to load your wallet
-                                        {{ $customer->wallet->code }} with ₦{{ $details['amount'] }}.
+                                        {{ $customer->wallet->code }} with ₦ {{ $amount }}.
                                     </p>
-                                    <p class="">Order ID: {{ $details['orderID'] }}</p>
+                                    <p>Click on "Pay Now". <br/>You will be redirected to the payment platform</p>
                                 </div>
 
                                 <input type="hidden" name="email" value="taofeek.olalere@feghas.com">
-                                <input type="hidden" name="orderID" value="{{ $details['orderID'] }}">
-                                <input type="hidden" name="amount" value="{{ $details['amount']*100 }}">
+                                <input type="hidden" name="amount" value="{{ $amount*100 }}">
                                 <input type="hidden" name="quantity" value="1">
                                 <input type="hidden" name="currency" value="NGN">
                                 <input type="hidden" name="metadata" value="{{ json_encode($array = ['customer_id' => $customer->id,]) }}" >
