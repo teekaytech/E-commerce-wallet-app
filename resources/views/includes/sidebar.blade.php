@@ -11,7 +11,6 @@
             <ul class="collapse list-unstyled" id="RegSubmenu">
                 <li class="sub-list"><a href="#">Pre-load Wallet (Debit Card)</a></li>
                 <li class="sub-list"><a href="{{ route('customer.new_transfer',$customer->id) }}">Send Virtual Gift (Transfer)</a></li>
-                <li class="sub-list"><a href="#">Check Wallet Balance</a></li>
             </ul>
         </li>
         <li><a href="{{ route('customer.logout') }}">Logout</a></li>
