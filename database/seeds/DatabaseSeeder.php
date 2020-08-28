@@ -13,11 +13,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         {
-            for ($i = 1; $i <= 3; $i++) {
+            for ($i = 1; $i <= 2; $i++) {
                 DB::table('customers')->insert([
-                    'firstname' => Str::random(10),
-                    'lastname' => Str::random(10),
-                    'phone_number' => '08139160110',
+                    'firstname' => $i == 1 ? 'Taofeek' : 'Abiodun',
+                    'lastname' => $i == 1 ? 'Olalere' : 'Olamilekan',
+                    'phone_number' => $i == 1 ? '07085516354' : '08139160110',
                     'email' => 'customer'.$i.'@gmail.com',
                     'created_at' => now(),
                     'updated_at' => now()

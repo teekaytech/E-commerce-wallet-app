@@ -37,6 +37,11 @@ class WalletsController extends Controller
             'amount'  => ['required', 'numeric']
         ]);
 
+        if ($request->amount <= 0) {
+            Session::flash('error', 'Amount to transfer CANNOT be less or equals 0.');
+            return back();
+        }
+
         $id = Session::get('customer');
         $sender = $this->fetch_customer($id);
         $receiver = Customer::where('email',$request->email)->with(['wallet'])->first();
