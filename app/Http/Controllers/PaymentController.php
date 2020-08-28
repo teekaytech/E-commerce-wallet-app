@@ -55,9 +55,5 @@ class PaymentController extends Controller {
         }
         return redirect(route('customer.preload_wallet',$id));
 
-//        ['data']['amount'];, transaction_date, ['metadata']['customer_id']
-        // Now you have the payment details,
-        // you can store the authorization_code in your db to allow for recurrent subscriptions
-        // you can then redirect or do whatever you want
     }
 }

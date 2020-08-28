@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Session;
 
 class WalletsController extends Controller
 {
+    public function __construct(){
+        if (!Session::get('customer')) {
+            return redirect('/');
+        }
+    }
+
     public function new_transfer($id) {
         $customer = $this->fetch_customer($id);
         $gifts_sent = WalletTransaction::where('sender_id', $customer->id)

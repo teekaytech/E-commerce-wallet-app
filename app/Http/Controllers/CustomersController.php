@@ -28,12 +28,17 @@ class CustomersController extends Controller
     }
 
     public function dashboard() {
-        $id = Session::get('customer');
-        $customer = Customer::where('id', '=', $id)
-                                ->with(['wallet', 'preload_transaction' => function($q){
-                                        $q->orderBy('paystack_transactions.id', 'desc');}])
-                                ->first();
-        return view('pages.dashboard', compact('customer'));
+        if (Session::get('customer')) {
+            $id = Session::get('customer');
+            $customer = Customer::where('id', '=', $id)
+                ->with(['wallet', 'preload_transaction' => function ($q) {
+                    $q->orderBy('paystack_transactions.id', 'desc');
+                }])
+                ->first();
+            return view('pages.dashboard', compact('customer'));
+        }  else{
+            return redirect('/');
+        }
     }
 
     public function logout() {

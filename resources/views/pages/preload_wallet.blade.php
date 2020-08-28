@@ -9,11 +9,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="wallet">Wallet to be credited:</label>
-                        <input type="text" class="form-control" id="wallet" name="wallet" value="{{ $customer->wallet->code }}" readonly>
+                        <input type="text" class="form-control" id="wallet" name="wallet" value="{{ $customer->wallet == null  ? 'Wallet not found' : $customer->wallet->code }}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="amount">Amount to Load</label>
-                        <input type="number" class="form-control" id="amount" name="amount" required value="{{ old('amount') }}">
+                        <input type="number" class="form-control" id="amount" {{ $customer->wallet == null ? 'disabled' : '' }} name="amount" required value="{{ old('amount') }}">
                     </div>
                     <button type="submit" class="btn btn-primary">Preload Wallet</button>
                 </form>
@@ -49,8 +49,8 @@
             </section>
             <section class="col-md-6 text-right">
                 <h4>Your wallet details:</h4>
-                <p><strong>Code:</strong> {{ $customer->wallet->code }}</p>
-                <p><strong>Balance:</strong> ₦{{ number_format((float)$customer->wallet->balance, 2, '.', '') }}</p>
+                <p><strong>Code:</strong> {{ $customer->wallet == null ? 'Code not found' : $customer->wallet->code }}</p>
+                <p><strong>Balance:</strong> ₦{{ $customer->wallet == null ? 0.0 : number_format((float)$customer->wallet->balance, 2, '.', '') }}</p>
             </section>
         </div>
 
