@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,26 +13,24 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         {
-            DB::table('customers')->insert([
-                'firstname' => 'Adeleke',
-                'lastname' => 'Alice',
-                'phone_number' => '08139160110',
-                'email' => 'customer1@gmail.com'
-            ]);
+            for ($i = 1; $i <= 3; $i++) {
+                DB::table('customers')->insert([
+                    'firstname' => Str::random(10),
+                    'lastname' => Str::random(10),
+                    'phone_number' => '08139160110',
+                    'email' => 'customer'.$i.'@gmail.com',
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
 
-            DB::table('customers')->insert([
-                'firstname' => 'Taofeek',
-                'lastname' => 'Olalere',
-                'phone_number' => '07085516354',
-                'email' => 'customer2@gmail.com'
-            ]);
-
-            DB::table('customers')->insert([
-                'firstname' => 'Abiodun',
-                'lastname' => 'Olamilekan',
-                'phone_number' => '09088787665',
-                'email' => 'customer3@gmail.com'
-            ]);
+                DB::table('wallets')->insert([
+                    'code' => 'WT'.$i,
+                    'customer_id' => $i,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                    'balance' => 0,
+                ]);
+            }
         }
     }
 }
