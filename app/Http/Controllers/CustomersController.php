@@ -16,9 +16,9 @@ class CustomersController extends Controller
         ]);
 
         $customer = Customer::where('email', $request->email)->first();
-        Session::put('customer', $customer->id);
 
         if ($customer) {
+            Session::put('customer', $customer->id);
             Session::flash('success', 'Login successful!');
             return redirect(route('customer.dashboard'));
         } else {
@@ -39,7 +39,7 @@ class CustomersController extends Controller
     public function logout() {
         Session::forget('customer');
         Session::flash('success', 'logout successful!');
-        return view('welcome');
+        return redirect('/');
     }
 
 }
