@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 
             DB::table('wallets')->insert([
                 'code' => 'WT2',
-                'customer_id' => 2,
+                'customer_id' => 11,
                 'created_at' => now(),
                 'updated_at' => now(),
                 'balance' => 0,
