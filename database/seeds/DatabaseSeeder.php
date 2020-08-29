@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         {
             for ($i = 1; $i <= 2; $i++) {
-                $customer = DB::table('customers')->insert([
+                DB::table('customers')->insert([
                     'firstname' => $i == 1 ? 'Taofeek' : 'Abiodun',
                     'lastname' => $i == 1 ? 'Olalere' : 'Olamilekan',
                     'phone_number' => $i == 1 ? '07085516354' : '08139160110',
@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
                 ]);
 
                 DB::table('wallets')->insert([
-                    'code' => 'WT'.$customer['id'],
-                    'customer_id' => $customer['id'],
+                    'code' => 'WT'.$i,
+                    'customer_id' => $i,
                     'created_at' => now(),
                     'updated_at' => now(),
                     'balance' => 0,
