@@ -47,6 +47,7 @@ class WalletsController extends Controller
         $receiver = Customer::where('email',$request->email)->with(['wallet'])->first();
 
         if ($receiver) {
+            dd($receiver);
             if ($this->update_wallet($sender->wallet->id, $receiver->wallet->id, $request->amount)) {
                 Session::flash('success', 'Transfer Successful!');
             } else {
