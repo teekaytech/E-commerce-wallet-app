@@ -22,15 +22,23 @@ class DatabaseSeeder extends Seeder
                     'created_at' => now(),
                     'updated_at' => now()
                 ]);
-
-                DB::table('wallets')->insert([
-                    'code' => 'WT'.$i,
-                    'customer_id' => $i,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                    'balance' => 0,
-                ]);
             }
+
+            DB::table('wallets')->insert([
+                'code' => 'WT1',
+                'customer_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'balance' => 0,
+            ]);
+
+            DB::table('wallets')->insert([
+                'code' => 'WT2',
+                'customer_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'balance' => 0,
+            ]);
         }
     }
 }
