@@ -13,24 +13,39 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         {
-            for ($i = 1; $i <= 2; $i++) {
-                DB::table('customers')->insert([
-                    'firstname' => $i == 1 ? 'Taofeek' : 'Abiodun',
-                    'lastname' => $i == 1 ? 'Olalere' : 'Olamilekan',
-                    'phone_number' => $i == 1 ? '07085516354' : '08139160110',
-                    'email' => 'customer'.$i.'@gmail.com',
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]);
+            DB::table('customers')->insert([
+                'firstname' =>'Taofeek',
+                'lastname' => 'Olalere',
+                'phone_number' => '07085516354',
+                'email' => 'customer1@gmail.com',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
 
-                DB::table('wallets')->insert([
-                    'code' => 'WT'.$i,
-                    'customer_id' => $i,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                    'balance' => 0,
-                ]);
-            }
+            DB::table('customers')->insert([
+                'firstname' => 'Abiodun',
+                'lastname' => 'Olamilekan',
+                'phone_number' => '08139160110',
+                'email' => 'customer2@gmail.com',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+
+            DB::table('wallets')->insert([
+                'code' => 'WT1',
+                'customer_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'balance' => 0,
+            ]);
+
+            DB::table('wallets')->insert([
+                'code' => 'WT2',
+                'customer_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'balance' => 0,
+            ]);
         }
     }
 }
