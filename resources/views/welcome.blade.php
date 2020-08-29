@@ -13,13 +13,14 @@
             <form method="POST" action="{{ route('customer.login') }}">
                 @csrf
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email:</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block mt-4" name="login">Login</button>
-                <a href="#" class="d-block">Register</a>
-                <a href="#">Forget your password?</a>
+                <p class="text-center my-4 text-primary font-weight-bold">
+                    Available logins -> customer1@gmail.com || customer2@gmail.com
+                </p>
             </form>
             <footer class="text-center mt-5 pb-2">
                 @include('includes.footer')
