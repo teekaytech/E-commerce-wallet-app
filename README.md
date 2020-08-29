@@ -10,6 +10,8 @@ Other core functionalities like authentication, authorization, etc. are not cons
   * MySQL
   * Paystack (Laravel Paystack package)
   
+## [Live Demo](https://secure-sands-44345.herokuapp.com/)
+  
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
