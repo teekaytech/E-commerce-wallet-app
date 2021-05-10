@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+if (!app()->isLocal()) {
+    URL::forceSchema('https');
+}
+
 Route::get('/', function () { return view('welcome');});
 Route::prefix('/customer')->name('customer.')->group(function () {
-    Route::post('/login',  'CustomersController@login')->name('login');
+    Route::post('/login', 'CustomersController@login')->name('login');
     Route::get('/dashboard',  'CustomersController@dashboard')->name('dashboard');
     Route::get('/logout',  'CustomersController@logout')->name('logout');
 
