@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\URL;
 |
 */
 if (!app()->isLocal()) {
-    URL::forceSchema('https');
+    URL::forceScheme('https');
 }
 
 Route::get('/', function () { return view('welcome');});
